@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {Recipe} from './recipe.model';
 
 @Component({
   selector: 'app-recipes',
@@ -8,10 +7,7 @@ import {Recipe} from './recipe.model';
 })
 
 export class RecipesComponent {
-  recipes: Recipe [];
+  onSelectedRecipe() {
 
-
-  recipeReceived(recipe: Recipe) {
-    this.recipes.push(recipe);
   }
 }

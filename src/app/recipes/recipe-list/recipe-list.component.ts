@@ -15,9 +15,9 @@ export class RecipeListComponent {
       'https://upload.wikimedia.org/wikipedia/commons/d/d3/Supreme_pizza.jpg')
   ];
 
-  @Output() sendRecipe = new EventEmitter<Recipe>();
+  @Output() selectedRecipe = new EventEmitter<Recipe>();
 
-  onSendDetails() {
-    this.sendRecipe.emit();
+  onSelectedRecipe(recipeElement: Recipe) {
+    this.selectedRecipe.emit(recipeElement);
   }
 }
