@@ -6,15 +6,17 @@ import {Ingredient} from '../shared/ingredient.model';
 })
 export class ShoppingListService {
   ingredientChanged = new EventEmitter<Ingredient[]>();
-  private ingredients: Ingredient[] = [
-    new Ingredient('Apple', 5),
-    new Ingredient('Tomato', 10)
-  ];
+  private ingredients: Ingredient[] = [];
 
   constructor() { }
 
   addIngredient(ingredient: Ingredient) {
     this.ingredients.push(ingredient);
+    this.ingredientChanged.emit(this.ingredients.slice());
+  }
+
+  addIngredientList(ingredients: Ingredient[]) {
+    this.ingredients.push(...ingredients);
     this.ingredientChanged.emit(this.ingredients.slice());
   }
 
