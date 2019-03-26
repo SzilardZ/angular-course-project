@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 import {Ingredient} from '../../shared/ingredient.model';
 import {ShoppingListService} from '../shopping-list.service';
 
@@ -15,9 +15,9 @@ export class ShoppingListEditComponent {
   constructor(private shoppingListService: ShoppingListService) {}
 
   onAddIngredient() {
-    const ingName = this.nameInputRef.nativeElement.value;
-    const ingAmount = this.amountInputRef.nativeElement.value;
-    const newIngredient = new Ingredient(ingName, ingAmount);
+    let ingName = this.nameInputRef.nativeElement.value;
+    let ingAmount = this.amountInputRef.nativeElement.value;
+    let newIngredient = new Ingredient(ingName, ingAmount);
     this.shoppingListService.addIngredient(newIngredient);
   }
 }
