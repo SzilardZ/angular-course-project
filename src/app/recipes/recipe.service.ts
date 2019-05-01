@@ -8,7 +8,7 @@ import {ShoppingListService} from '../shopping-list/shopping-list.service';
 })
 export class RecipeService {
 
-   selectedRecipe = new EventEmitter<Recipe>();
+  selectedRecipe = new EventEmitter<Recipe>();
 
   private recipes: Recipe[] = [
     new Recipe(
@@ -35,12 +35,12 @@ export class RecipeService {
     return this.recipes.slice();
   }
 
-  addIngredientsToShoppingList(ingredients: Ingredient[]) {
-    this.shoppingListService.addIngredientList(ingredients);
-  }
-
   getRecipe(index: number) {
     return this.recipes[index];
+  }
+
+  addIngredientsToShoppingList(ingredients: Ingredient[]) {
+    this.shoppingListService.addIngredientList(ingredients);
   }
 
 }
